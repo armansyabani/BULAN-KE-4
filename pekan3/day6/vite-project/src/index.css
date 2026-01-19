@@ -1,0 +1,238 @@
+/* =====================
+   GLOBAL THEME
+===================== */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --secondary: #0f172a;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  color: var(--text);
+}
+
+/* =====================
+   NAVBAR
+===================== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 28px;
+  padding: 18px 40px;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--primary-dark)
+  );
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: white;
+  font-weight: 600;
+}
+
+/* =====================
+   GRID PRODUCT
+===================== */
+.grid {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* =====================
+   PRODUCT CARD
+===================== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.25);
+}
+
+.card img {
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+/* =====================
+   CARD BUTTON
+===================== */
+.card-btn {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.card-btn button,
+.card-btn a {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-btn button {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-dark)
+  );
+  border: none;
+  color: white;
+}
+
+.card-btn button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.card-btn a {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.card-btn a:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* =====================
+   PAGE CONTAINER
+===================== */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+}
+
+/* =====================
+   CART
+===================== */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+  background: #e0e7ff;
+}
+
+.cart-item button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  opacity: 0.85;
+}
+
+/* =====================
+   BUTTON GLOBAL
+===================== */
+button {
+  font-family: inherit;
+}
+
+/* =====================
+   ANIMATION
+===================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -20,7 +20,7 @@ const Login = () => {
       return;
     }
 
-    login(); // set isAuth = true
+    login(); // set  isAuth = true
     navigate(location.state?.from || "/checkout");
   };
 
